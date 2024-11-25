@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="APCSIS.Pages.EditStudentPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="EditStudentPage">
+    <VerticalStackLayout Margin="20">
+        <Entry x:Name="txtid" />
+        <Entry x:Name="txtfname" />
+        <Entry x:Name="txtlname" />
+        <Entry x:Name="txtaddress" />
+        <Entry x:Name="txtconNum" />
+
+        <Button x:Name="btnupdate" Clicked="Btnupdate_OnClicked" />
+    </VerticalStackLayout>
+
+</ContentPage>

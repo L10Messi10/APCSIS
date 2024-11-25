@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="APCSIS.Pages.StudentList"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Students">
+
+    <RefreshView
+        x:Name="RefreshView"
+        BackgroundColor="{StaticResource Primary}"
+        RefreshColor="{StaticResource ButtonColor}">
+        <CollectionView
+            x:Name="ListStudents"
+            SelectionMode="Single"
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout
+                    Orientation="Vertical"
+                    Span="1"
+                    VerticalItemSpacing="0" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Padding="2">
+                        <SwipeView
+                            BackgroundColor="Transparent"
+                            HeightRequest="80"
+                            IsClippedToBounds="True">
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItemView
+                                        x:Name="itemSelect"
+                                        Margin="5"
+                                        Invoked="ItemSelect_OnInvoked"
+                                        BackgroundColor="{StaticResource Primary}">
+                                        <!--  Invoked="ItemSelect_OnInvoked"  -->
+
+                                        <StackLayout
+                                            Margin="5"
+                                            HorizontalOptions="CenterAndExpand"
+                                            Orientation="Vertical"
+                                            VerticalOptions="CenterAndExpand">
+                                            <Image
+                                                Aspect="AspectFit"
+                                                HeightRequest="20"
+                                                Source="select.png"
+                                                WidthRequest="20" />
+                                            <Label
+                                                FontSize="Micro"
+                                                HorizontalOptions="CenterAndExpand"
+                                                Text="Edit"
+                                                TextColor="{StaticResource TextColorWhite}"
+                                                VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
+
+                                    </SwipeItemView>
+                                </SwipeItems>
+
+                            </SwipeView.RightItems>
+                            <Frame
+                                Margin="5,0"
+                                Padding="0"
+                                BackgroundColor="{StaticResource Primary}"
+                                CornerRadius="5"
+                                HasShadow="False">
+                                <Grid
+                                    ColumnDefinitions="Auto, *"
+                                    RowDefinitions="Auto,Auto, *"
+                                    VerticalOptions="FillAndExpand">
+
+                                    <Grid
+                                        Grid.Column="1"
+                                        Grid.ColumnSpan="2"
+                                        Margin="10"
+                                        BackgroundColor="Transparent"
+                                        ColumnDefinitions="Auto, *, Auto"
+                                        HorizontalOptions="FillAndExpand"
+                                        RowDefinitions="Auto,Auto">
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontSize="Medium"
+                                            HorizontalOptions="Start"
+                                            Text="ID: "
+                                            TextColor="{StaticResource TextSoft}"
+                                            VerticalOptions="CenterAndExpand" />
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            FontSize="Medium"
+                                            Text="{Binding ID}"
+                                            TextColor="{StaticResource TextColorWhite}" />
+                                    </Grid>
+
+                                </Grid>
+                            </Frame>
+                        </SwipeView>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </RefreshView>
+
+</ContentPage>
