@@ -11,6 +11,8 @@
         RefreshColor="{StaticResource ButtonColor}">
         <CollectionView
             x:Name="ListStudents"
+            RemainingItemsThreshold="2"
+            RemainingItemsThresholdReached="ListStudents_OnRemainingItemsThresholdReached"
             SelectionMode="Single"
             VerticalOptions="FillAndExpand">
             <CollectionView.ItemsLayout>
@@ -31,8 +33,8 @@
                                     <SwipeItemView
                                         x:Name="itemSelect"
                                         Margin="5"
-                                        Invoked="ItemSelect_OnInvoked"
-                                        BackgroundColor="{StaticResource Primary}">
+                                        BackgroundColor="{StaticResource Primary}"
+                                        Invoked="ItemSelect_OnInvoked">
                                         <!--  Invoked="ItemSelect_OnInvoked"  -->
 
                                         <StackLayout

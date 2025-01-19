@@ -17,27 +17,57 @@ namespace APCSIS.Models
         public string Address { get; set; }
         public string ConNum { get; set; }
 
-        public async Task<List<Students>> GetStudents()
+        //public async Task<List<Students>> GetStudents()
+        //{
+        //    try
+        //    {
+        //        return (await client
+        //            .Child("Students")
+        //            .OnceAsync<Students>()).Select(item => new Students
+        //            {
+        //                ID = item.Object.ID,
+        //                FirstName = item.Object.FirstName,
+        //                LastName = item.Object.LastName,
+        //                Address = item.Object.Address,
+        //                ConNum = item.Object.ConNum
+
+        //            }).ToList();
+        //    }
+        //    catch
+        //    {
+        //        return null;
+        //    }
+        //}
+
+        public async Task<List<Students>> GetStudents(int limit, int offset)
         {
             try
             {
-                return (await client
-                    .Child("Students")
-                    .OnceAsync<Students>()).Select(item => new Students
+                // Replace this with your actual Firebase fetching logic
+                var students = (await client
+                        .Child("Students")
+                        .OrderByKey()  // Or any other ordering logic you want
+                        .StartAt(offset.ToString()) // Use the offset to paginate
+                        .LimitToFirst(limit)
+                        .OnceAsync<Students>())
+                    .Select(item => new Students
                     {
                         ID = item.Object.ID,
                         FirstName = item.Object.FirstName,
                         LastName = item.Object.LastName,
                         Address = item.Object.Address,
                         ConNum = item.Object.ConNum
-
                     }).ToList();
+
+                return students;
             }
             catch
             {
                 return null;
             }
         }
+
+
 
 
 

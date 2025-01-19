@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="APCSIS.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Title="SettingsPage">
+    <Grid RowDefinitions="50, 100, Auto, Auto, Auto">
+
+        <HorizontalStackLayout Grid.Row="0">
+            <ImageButton />
+            <Label
+                FontSize="20"
+                Text="Settings"
+                VerticalOptions="Center" />
+        </HorizontalStackLayout>
+
+        <toolkit:AvatarView
+            Grid.Row="1"
+            CornerRadius="50"
+            FontSize="40"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            Text="APC"
+            WidthRequest="100" />
+
+        <Label
+            Grid.Row="2"
+            HorizontalOptions="Center"
+            Text="User name" />
+
+        <Label
+            Grid.Row="3"
+            HorizontalOptions="Center"
+            Text="01/01/2025" />
+
+        <!--  This is for the Border and other details and buttons  -->
+
+
+        <Border
+            Grid.Row="4"
+            Margin="20"
+            Padding="20"
+            Stroke="{StaticResource ButtonColor}"
+            StrokeShape="RoundRectangle 20"
+            StrokeThickness="0.9">
+            <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" RowSpacing="10">
+                <Grid
+                    Grid.Row="0"
+                    ColumnDefinitions="Auto, *"
+                    HorizontalOptions="Fill">
+                    <Label
+                        Grid.Column="0"
+                        FontSize="20"
+                        Text="Personal Details"
+                        VerticalOptions="Center" />
+                    <ImageButton Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+
+                <Grid
+                    Grid.Row="1"
+                    Margin="10"
+                    RowDefinitions="Auto, Auto">
+                    <Grid Grid.Row="0" ColumnDefinitions="Auto, *">
+                        <Label
+                            Grid.Column="0"
+                            FontSize="18"
+                            Text="Full name" />
+                        <Label
+                            Grid.Column="1"
+                            FontSize="18"
+                            HorizontalOptions="End"
+                            Text="Aces" />
+                    </Grid>
+                </Grid>
+                <Border Grid.Row="2" HeightRequest="1" />
+
+
+                <Grid
+                    Grid.Row="3"
+                    Margin="10"
+                    RowDefinitions="Auto, Auto">
+                    <Grid Grid.Row="0" ColumnDefinitions="Auto, *">
+                        <Label
+                            Grid.Column="0"
+                            FontSize="18"
+                            Text="Address" />
+                        <Label
+                            Grid.Column="1"
+                            FontSize="18"
+                            HorizontalOptions="End"
+                            Text="Panabo" />
+                    </Grid>
+                </Grid>
+                <Border Grid.Row="4" HeightRequest="1" />
+
+
+                <Grid
+                    Grid.Row="5"
+                    ColumnDefinitions="Auto, *"
+                    HorizontalOptions="Fill">
+                    <Label
+                        Grid.Column="0"
+                        FontSize="20"
+                        Text="Request Account Deletion"
+                        TextColor="Red"
+                        VerticalOptions="Center" />
+                    <ImageButton Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+                <Border Grid.Row="6" HeightRequest="1" />
+
+
+                <Grid
+                    Grid.Row="7"
+                    ColumnDefinitions="Auto, *"
+                    HorizontalOptions="Fill">
+                    <Label
+                        Grid.Column="0"
+                        FontSize="20"
+                        Text="Logout"
+                        TextColor="DarkTurquoise"
+                        VerticalOptions="Center" />
+                    <ImageButton Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+            </Grid>
+            <!--  Something here  -->
+        </Border>
+
+
+
+    </Grid>
+</ContentPage>
