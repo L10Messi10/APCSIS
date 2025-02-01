@@ -3,73 +3,15 @@
     x:Class="APCSIS.Pages.SignUp"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
     Title="SignUp"
     BackgroundColor="{StaticResource BgColor}">
-    <Grid RowDefinitions="Auto, *">
-        <Frame
-            Grid.Row="0"
-            Margin="0,-20,0,0"
-            BackgroundColor="{StaticResource FrameBgColor}"
-            BorderColor="Transparent"
-            CornerRadius="10">
-            <HorizontalStackLayout>
-                <ImageButton
-                    Clicked="ImageButton_Clicked"
-                    HeightRequest="30"
-                    Source="close.png" />
-                <Label
-                    Margin="20,0"
-                    FontSize="20"
-                    Text="Sign Up"
-                    VerticalOptions="CenterAndExpand" />
-            </HorizontalStackLayout>
-        </Frame>
-        <Frame
-            Grid.Row="1"
-            Margin="20"
-            BackgroundColor="{StaticResource FrameBgColor}"
-            BorderColor="Transparent"
-            CornerRadius="20"
-            VerticalOptions="Center">
-            <Grid
-                Margin="20"
-                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
-                RowSpacing="5"
-                VerticalOptions="Center">
-                <Entry
-                    x:Name="txtfname"
-                    Grid.Row="0"
-                    BackgroundColor="{StaticResource TextBgColor}"
-                    Placeholder="First Name" />
-                <Entry
-                    x:Name="txtlname"
-                    Grid.Row="1"
-                    BackgroundColor="{StaticResource TextBgColor}"
-                    Placeholder="Last Name" />
-                <Entry
-                    x:Name="txtmname"
-                    Grid.Row="2"
-                    BackgroundColor="{StaticResource TextBgColor}"
-                    Placeholder="Middle Name" />
-                <Entry
-                    x:Name="txtemail"
-                    Grid.Row="3"
-                    BackgroundColor="{StaticResource TextBgColor}"
-                    Keyboard="Email"
-                    Placeholder="Email" />
-                <Entry
-                    x:Name="txtpassword"
-                    Grid.Row="4"
-                    BackgroundColor="{StaticResource TextBgColor}"
-                    IsPassword="True"
-                    Placeholder="Password" />
-                <Button
-                    x:Name="btnregister"
-                    Grid.Row="5"
-                    BackgroundColor="{StaticResource ButtonColor}"
-                    Clicked="btnregister_Clicked"
-                    Text="Register" />
-            </Grid>
-        </Frame>
-    </Grid>
+    <VerticalStackLayout>
+        <Entry Placeholder="Name" />
+        <material:TextField Title="Name" />
+        <material:TextField Title="Surname" />
+        <material:TextField Title="Age" Keyboard="Numeric" />
+    </VerticalStackLayout>
+
+
 </ContentPage>

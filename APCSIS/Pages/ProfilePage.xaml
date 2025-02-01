@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="APCSIS.Pages.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ProfilePage">
+    <ScrollView>
+        <Frame
+            Margin="-90,-300,-90,0"
+            BackgroundColor="Blue"
+            CornerRadius="250"
+            HeightRequest="500"
+            HorizontalOptions="Fill"
+            VerticalOptions="Start">
+            <Image />
+        </Frame>
+    </ScrollView>
+</ContentPage>

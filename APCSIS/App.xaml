@@ -3,6 +3,7 @@
     x:Class="APCSIS.App"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
     xmlns:local="clr-namespace:APCSIS">
     <Application.Resources>
         <ResourceDictionary>
@@ -13,10 +14,16 @@
             <Color x:Key="TextSoft">Gray</Color>
             <Color x:Key="ButtonColor">#A594F9</Color>
             <Color x:Key="TextBlack">#A594F9</Color>
+
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+                <ResourceDictionary x:Name="appColors" Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary x:Name="appStyles" Source="Resources/Styles/Styles.xaml" />
+
+                <material:StyleResource ColorsOverride="{x:Reference appColors}" BasedOn="{x:Reference appStyles}" />
             </ResourceDictionary.MergedDictionaries>
+
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
