@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 using UraniumUI;
 
 namespace APCSIS
@@ -13,6 +14,7 @@ namespace APCSIS
                 .UseMauiApp<App>()
                 .UseUraniumUI()
                 .UseUraniumUIMaterial()
+                .UseSkiaSharp()
                 .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {

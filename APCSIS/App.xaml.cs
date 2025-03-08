@@ -7,7 +7,7 @@ namespace APCSIS
         public App()
         {
             InitializeComponent();
-            MainPage = new ProfilePage();
+            MainPage = new NewPage1();
         }
     }
 }
