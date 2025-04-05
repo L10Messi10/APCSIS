@@ -7,7 +7,7 @@ namespace APCSIS
         public App()
         {
             InitializeComponent();
-            MainPage = new NewPage1();
+            MainPage = new UploadImagePage();
         }
     }
 }
